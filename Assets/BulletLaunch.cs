@@ -9,6 +9,8 @@ public class BulletLaunch : MonoBehaviour
    
     public Transform space;
     public Vector3 offset;
+  
+
 
     void Start()
     {
@@ -23,4 +25,7 @@ public class BulletLaunch : MonoBehaviour
             Instantiate(bulletPrefab, space.position+offset, space.rotation);
         }
     }
+   
+   
+  
 }
