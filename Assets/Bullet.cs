@@ -11,10 +11,20 @@ public class Bullet : MonoBehaviour
     {
         rb.velocity = transform.right * speed;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+   {
+        ScoreManager score;
+       if(collision.gameObject.tag=="asteroid")
+       {
+           Destroy(collision.gameObject);
+            score = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+            score.ScoreCalculator(10);
+        }
+   }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 }
